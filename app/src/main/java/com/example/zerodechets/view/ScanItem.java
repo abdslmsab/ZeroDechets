@@ -2,6 +2,7 @@ package com.example.zerodechets.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,7 @@ public class ScanItem extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://world.openfoodfacts.org/")
+                .baseUrl("http://world.openfoodfacts.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

@@ -6,4 +6,9 @@
     <string name="ajouter_un_article">Ajouter un article</string>
     <string name="saisir_le_code_barre">Saisir le code barre</string>
     <string name="valider">Valider</string>
+    <string name="nom_article">Nom article</string>
+    <string name="quantite">Quantité</string>
+    <string name="ingredients">Ingrédients</string>
+    <string name="annuler">Annuler</string>
+    <string name="ean_article">Ean</string>
 </resources>
