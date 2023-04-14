@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zerodechets.R;
+import com.example.zerodechets.api.OpenFoodFactsResponse;
 import com.example.zerodechets.api.OpenFoodFactsService;
 import com.example.zerodechets.api.Product;
 import com.google.android.material.textfield.TextInputEditText;
@@ -61,23 +62,21 @@ public class ScanItem extends AppCompatActivity {
                     return;
                 }
 
-                openFoodFactsService.getProduct(ean).enqueue(new Callback<Product>() {
+                openFoodFactsService.getProduct(ean).enqueue(new Callback<OpenFoodFactsResponse>() {
                     @Override
-                    public void onResponse(Call<Product> call, Response<Product> response) {
+                    public void onResponse(Call<OpenFoodFactsResponse> call, Response<OpenFoodFactsResponse> response) {
+                        String message = "Produit non trouvé";
                         if (response.isSuccessful()) {
-                            Product product = response.body();
-                            String productName = product.getProductName();
-                            String code = product.getCode();
-
-                            String message = "Nom : " + productName + "\nCode : " + code;
-                            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Produit non trouvé", Toast.LENGTH_SHORT).show();
+                            OpenFoodFactsResponse offResponse = response.body();
+                            if (offResponse.getStatus() == 1) {
+                                message = offResponse.getProduct().getName();
+                            }
                         }
+                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     }
 
                     @Override
-                    public void onFailure(Call<Product> call, Throwable t) {
+                    public void onFailure(Call<OpenFoodFactsResponse> call, Throwable t) {
                         Toast.makeText(getApplicationContext(), "Erreur lors de la récupération du produit", Toast.LENGTH_SHORT).show();
                     }
                 });

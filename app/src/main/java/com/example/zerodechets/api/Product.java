@@ -3,25 +3,16 @@ package com.example.zerodechets.api;
 import com.google.gson.annotations.SerializedName;
 
 public class Product {
-    @SerializedName("product_name")
-    private String productName;
 
-    @SerializedName("quantity")
-    private String quantity;
+    @SerializedName("generic_name")
+    private String name;
 
-    @SerializedName("code")
-    private String code;
-
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public String getCode() {
-        return code;
+    public void setName(String name) {
+        this.name = name;
     }
 }
 

@@ -179,7 +179,7 @@ public class Camera extends AppCompatActivity {
     private void onSuccessListener(List<Barcode> barcodes) {
         if (barcodes.size() > 0) {
             String ean = barcodes.get(0).getDisplayValue();
-            Toast.makeText(this, ean, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, ean, Toast.LENGTH_SHORT).show();
             returnResult(ean);
         }
     }
