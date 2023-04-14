@@ -66,16 +66,16 @@ public class ScanItem extends AppCompatActivity {
                 openFoodFactsService.getProduct(ean).enqueue(new Callback<OpenFoodFactsResponse>() {
                     @Override
                     public void onResponse(Call<OpenFoodFactsResponse> call, Response<OpenFoodFactsResponse> response) {
-                        String message = "Produit non trouvé";
+                        String nameProduct = "";
                         if (response.isSuccessful()) {
                             OpenFoodFactsResponse offResponse = response.body();
                             if (offResponse.getStatus() == 1) {
-                                message = offResponse.getProduct().getName();
+                                nameProduct = offResponse.getProduct().getName();
                             }
                         }
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-
-                        Intent intent = new Intent(ScanItem.this, InfosItem.class);
+                       Intent intent = new Intent(ScanItem.this, InfosItem.class);
+                        intent.putExtra("ean", ean);
+                        intent.putExtra("name_product", nameProduct);
                         startActivity(intent);
                     }
 
