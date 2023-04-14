@@ -21,4 +21,6 @@
     <string name="product_not_found">Produit introuvable</string>
     <string name="product_retrieve_error">Erreur lors de la récupération du produit</string>
     <string name="about_info">Application réalisée par Sabri et Evan</string>
+    <string name="expiry_date">Date d\'expiration</string>
+    <string name="barcode">Code-barres</string>
 </resources>

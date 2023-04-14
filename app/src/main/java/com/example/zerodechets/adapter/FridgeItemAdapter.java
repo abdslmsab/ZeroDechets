@@ -37,8 +37,8 @@ public class FridgeItemAdapter extends ArrayAdapter<FridgeItem> {
 
         FridgeItem currentItem = itemsList.get(position);
         itemName.setText(currentItem.getItemName());
-        itemDate.setText(currentItem.getExpiryDate());
-        itemBarcode.setText(currentItem.getItemEan());
+        itemDate.setText(getContext().getString(R.string.expiry_date) + " : " + currentItem.getExpiryDate());
+        itemBarcode.setText(getContext().getString(R.string.barcode) + " : " + currentItem.getItemEan());
 
         return convertView;
     }

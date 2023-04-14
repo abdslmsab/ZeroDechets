@@ -21,4 +21,6 @@
     <string name="product_not_found">Product not found</string>
     <string name="product_retrieve_error">Error retrieving product</string>
     <string name="about_info">Application created by Sabri and Evan</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="barcode">Barcode</string>
 </resources>
