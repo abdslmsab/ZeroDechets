@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
 @Entity(tableName = "fridge_items")
 public class FridgeItem {
 
@@ -21,14 +23,17 @@ public class FridgeItem {
     @ColumnInfo(name = "item_ean")
     private String itemEan;
 
+    private int daysUntilNotif;
+
     public FridgeItem() {
     }
 
     @Ignore
-    public FridgeItem(String itemName, String expiryDate, String itemEan) {
+    public FridgeItem(String itemName, String expiryDate, String itemEan, int daysUntilNotif) {
         this.itemName = itemName;
         this.expiryDate = expiryDate;
         this.itemEan = itemEan;
+        this.daysUntilNotif = daysUntilNotif;
     }
 
     public int getId() {
@@ -61,5 +66,13 @@ public class FridgeItem {
 
     public void setItemEan(String itemEan) {
         this.itemEan = itemEan;
+    }
+
+    public int getDaysUntilNotif() {
+        return daysUntilNotif;
+    }
+
+    public void setDaysUntilNotif(int daysUntilNotif) {
+        this.daysUntilNotif = daysUntilNotif;
     }
 }

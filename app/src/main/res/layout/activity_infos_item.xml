@@ -1,91 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/conteneurFormulaire"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/ean_article"
-        style="@style/Theme.ZeroDechets.H2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conteneurFormulaire"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:text="@string/ean_article"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/valeur_ean_article"
-        style="@style/Theme.ZeroDechets.H2.NoBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/ean_article"
-        app:layout_constraintTop_toBottomOf="@id/ean_article"
-        tools:text="400" />
+        <TextView
+            android:id="@+id/ean_article"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="32sp"
+            android:text="@string/ean_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nom_article"
-        style="@style/Theme.ZeroDechets.H2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="32sp"
-        android:text="@string/nom_article"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/valeur_ean_article" />
+        <TextView
+            android:id="@+id/valeur_ean_article"
+            style="@style/Theme.ZeroDechets.H2.NoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/ean_article"
+            app:layout_constraintTop_toBottomOf="@id/ean_article"
+            tools:text="400" />
 
-    <TextView
-        android:id="@+id/valeur_nom_article"
-        style="@style/Theme.ZeroDechets.H2.NoBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/nom_article"
-        app:layout_constraintTop_toBottomOf="@id/nom_article"
-        tools:text="400" />
+        <TextView
+            android:id="@+id/nom_article"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32sp"
+            android:layout_marginTop="32sp"
+            android:text="@string/nom_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/valeur_ean_article" />
 
-    <TextView
-        android:id="@+id/quantite"
-        style="@style/Theme.ZeroDechets.H2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32sp"
-        android:text="@string/quantite"
-        app:layout_constraintStart_toStartOf="@id/nom_article"
-        app:layout_constraintTop_toBottomOf="@id/valeur_nom_article" />
+        <TextView
+            android:id="@+id/valeur_nom_article"
+            style="@style/Theme.ZeroDechets.H2.NoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/nom_article"
+            app:layout_constraintTop_toBottomOf="@id/nom_article"
+            tools:text="400" />
 
-    <TextView
-        android:id="@+id/valeur_quantite"
-        style="@style/Theme.ZeroDechets.H2.NoBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/quantite"
-        app:layout_constraintTop_toBottomOf="@id/quantite"
-        tools:text="400" />
+        <TextView
+            android:id="@+id/quantite"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:text="@string/quantite"
+            app:layout_constraintStart_toStartOf="@id/nom_article"
+            app:layout_constraintTop_toBottomOf="@id/valeur_nom_article" />
 
-    <TextView
-        android:id="@+id/ingredients"
-        style="@style/Theme.ZeroDechets.H2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32sp"
-        android:layout_marginTop="32sp"
-        android:text="@string/ingredients"
-        app:layout_constraintBottom_toTopOf="@id/valeur_ingredients"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/valeur_quantite" />
+        <TextView
+            android:id="@+id/valeur_quantite"
+            style="@style/Theme.ZeroDechets.H2.NoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/quantite"
+            app:layout_constraintTop_toBottomOf="@id/quantite"
+            tools:text="400" />
 
-    <TextView
-        android:id="@+id/valeur_ingredients"
-        style="@style/Theme.ZeroDechets.H2.NoBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/ingredients"
-        app:layout_constraintTop_toBottomOf="@id/ingredients"
-        tools:text="2" />
+        <TextView
+            android:id="@+id/marque"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32sp"
+            android:layout_marginTop="32sp"
+            android:text="@string/marque"
+            app:layout_constraintBottom_toTopOf="@id/valeur_marque"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/valeur_quantite" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/valeur_marque"
+            style="@style/Theme.ZeroDechets.H2.NoBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/marque"
+            app:layout_constraintTop_toBottomOf="@id/marque"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/datePickerTitle"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/date_peremption_question"
+            app:layout_constraintStart_toStartOf="@id/valeur_marque"
+            app:layout_constraintTop_toBottomOf="@id/valeur_marque" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/datePickerTitle"/>
+
+        <TextView
+            android:id="@+id/radioGroupTitle"
+            style="@style/Theme.ZeroDechets.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/until_notif_question"
+            app:layout_constraintStart_toStartOf="@id/datePicker"
+            app:layout_constraintTop_toBottomOf="@id/datePicker"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupTitle">
+
+            <RadioButton
+                android:id="@+id/unJour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/un_jour"/>
+
+            <RadioButton
+                android:id="@+id/troisJour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trois_jours" />
+
+            <RadioButton
+                android:id="@+id/septJours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sept_jours"/>
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bouton_valider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="32sp"
+            android:layout_marginEnd="32sp"
+            android:layout_weight="1"
+            android:text="@string/valider"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -11,4 +11,14 @@
     <string name="ingredients">Ingrédients</string>
     <string name="annuler">Annuler</string>
     <string name="ean_article">Ean</string>
+    <string name="marque">Marque</string>
+    <string name="date_peremption_question">Quelle est la date de péremption ?</string>
+    <string name="until_notif_question">Combien de temps avant la date de péremption souhaitez-vous recevoir une notification ?</string>
+    <string name="un_jour">1 jour</string>
+    <string name="trois_jours">3 jour</string>
+    <string name="sept_jours">7 jour</string>
+    <string name="about">À propos</string>
+    <string name="product_not_found">Produit introuvable</string>
+    <string name="product_retrieve_error">Erreur lors de la récupération du produit</string>
+    <string name="about_info">Application réalisée par Sabri et Evan</string>
 </resources>

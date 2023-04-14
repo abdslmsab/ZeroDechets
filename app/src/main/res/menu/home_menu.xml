@@ -5,8 +5,8 @@
         android:icon="@drawable/home_white_24dp"
         android:title="@string/home"
         app:showAsAction="always" />
-    <item android:id="@+id/dots"
-        android:icon="@drawable/more_vert_white_24dp"
-        android:title="@string/menu"
-        app:showAsAction="always" />
+
+    <item android:id="@+id/about"
+        android:title="@string/about"
+        app:showAsAction="never" />
 </menu>

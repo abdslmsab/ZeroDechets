@@ -27,7 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ScanItem extends AppCompatActivity {
+public class ScanItem extends AppActivity {
     private OpenFoodFactsService openFoodFactsService;
 
 
@@ -66,20 +66,27 @@ public class ScanItem extends AppCompatActivity {
                 openFoodFactsService.getProduct(ean).enqueue(new Callback<OpenFoodFactsResponse>() {
                     @Override
                     public void onResponse(Call<OpenFoodFactsResponse> call, Response<OpenFoodFactsResponse> response) {
+                        String errorMessage = getString(R.string.product_not_found);
                         if (response.isSuccessful()) {
                             OpenFoodFactsResponse offResponse = response.body();
                             if (offResponse.getStatus() == 1) {
+                                errorMessage = null;
                                 Intent intent = new Intent(ScanItem.this, InfosItem.class);
                                 intent.putExtra("ean", ean);
                                 intent.putExtra("name_product", offResponse.getProduct().getName());
+                                intent.putExtra("quantity", offResponse.getProduct().getQuantity());
+                                intent.putExtra("brands", offResponse.getProduct().getBrands());
                                 startActivity(intent);
                             }
+                        }
+                        if(errorMessage != null) {
+                            Toast.makeText(ScanItem.this, errorMessage, Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<OpenFoodFactsResponse> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), "Erreur lors de la récupération du produit", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.product_retrieve_error), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

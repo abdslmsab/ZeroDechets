@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.zerodechets.dao.FridgeItemDao;
 import com.example.zerodechets.model.FridgeItem;
 
-@Database(entities = {FridgeItem.class}, version = 1)
+@Database(entities = {FridgeItem.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
 
