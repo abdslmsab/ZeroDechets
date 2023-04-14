@@ -32,6 +32,20 @@ public class MainActivity extends AppActivity {
 
         listView = findViewById(R.id.listView);
 
+        Button addButton = findViewById(R.id.add_button);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScanItem.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -46,15 +60,5 @@ public class MainActivity extends AppActivity {
                 });
             }
         }).start();
-
-        Button addButton = findViewById(R.id.add_button);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScanItem.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }
