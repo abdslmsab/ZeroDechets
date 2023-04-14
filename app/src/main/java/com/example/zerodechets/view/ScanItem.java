@@ -74,6 +74,9 @@ public class ScanItem extends AppCompatActivity {
                             }
                         }
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+
+                        Intent intent = new Intent(ScanItem.this, InfosItem.class);
+                        startActivity(intent);
                     }
 
                     @Override
