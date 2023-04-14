@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ZeroDechets</string>
+    <string name="home">Home</string>
+    <string name="menu">Menu</string>
+    <string name="liste_title">Mon frigo</string>
+    <string name="ajouter_un_article">Ajouter un article</string>
+    <string name="saisir_le_code_barre">Saisir le code barre</string>
+    <string name="valider">Valider</string>
+</resources>
