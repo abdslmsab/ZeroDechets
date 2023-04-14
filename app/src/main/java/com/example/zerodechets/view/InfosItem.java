@@ -23,7 +23,7 @@ public class InfosItem extends AppCompatActivity {
         valeur_nom_article = findViewById(R.id.valeur_nom_article);
 
         String ean = getIntent().getStringExtra("ean");
-        String nameProduct = getIntent().getStringExtra("nameProduct");
+        String nameProduct = getIntent().getStringExtra("name_product");
 
         valeur_ean_article.setText(ean);
         valeur_nom_article.setText(nameProduct);

@@ -66,17 +66,15 @@ public class ScanItem extends AppCompatActivity {
                 openFoodFactsService.getProduct(ean).enqueue(new Callback<OpenFoodFactsResponse>() {
                     @Override
                     public void onResponse(Call<OpenFoodFactsResponse> call, Response<OpenFoodFactsResponse> response) {
-                        String nameProduct = "";
                         if (response.isSuccessful()) {
                             OpenFoodFactsResponse offResponse = response.body();
                             if (offResponse.getStatus() == 1) {
-                                nameProduct = offResponse.getProduct().getName();
+                                Intent intent = new Intent(ScanItem.this, InfosItem.class);
+                                intent.putExtra("ean", ean);
+                                intent.putExtra("name_product", offResponse.getProduct().getName());
+                                startActivity(intent);
                             }
                         }
-                       Intent intent = new Intent(ScanItem.this, InfosItem.class);
-                        intent.putExtra("ean", ean);
-                        intent.putExtra("name_product", nameProduct);
-                        startActivity(intent);
                     }
 
                     @Override
